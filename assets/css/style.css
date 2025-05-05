@@ -14,3 +14,6 @@
 .user_list_item.active , .user_list_item.active .collapsible-header{
     background-color: rgba(200, 189, 189, 0.51);
 }
+table.highlight > tbody > tr:hover {
+    background-color:  #bbdefb;
+  }
