@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/assets/css/util.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body>
+<body x-data="usersData">
       <!-- navbar -->
     <nav class="blue darken-3 top-nabvar" >
         <div class="nav-wrapper">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="col xl2 hide-on-med-and-down"></div>
         </section>
-        <section class="user_list_section">
+        <section class="user_list_section" x-init="gitusers()">
           <ul class="collapsible hide-on-med-and-up">
             <li class="user_list_item">
               <div class="collapsible-header">
@@ -150,40 +150,20 @@
                   <th>Action</th>
               </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Aydin</td>
-                  <td>azakh</td>
-                  <td>azakhaydin@gmail.com</td>
-                  <td>berlin example street</td>
+              <tbody class="desktop_table_body">
+                <template x-for="user in users">
+                  <tr>
+                  <td x-text="user.id"></td>
+                  <td x-text="user.name"></td>
+                  <td x-text="user.username"></td>
+                  <td x-text="user.email"></td>
+                  <td x-text="user.address.city+' - '+user.address.street"></td>
                   <td>
                     <i class="material-icons black-text m-l-5 m-r-5 hov-pointer">edit</i>
                     <i class="material-icons red-text darken-3 m-l-5 m-r-5 hov-pointer">delete_forever</i>
                   </td>
                 </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Aydin</td>
-                  <td>azakh</td>
-                  <td>azakhaydin@gmail.com</td>
-                  <td>berlin example street</td>
-                  <td>
-                    <i class="material-icons black-text m-l-5 m-r-5 hov-pointer">edit</i>
-                    <i class="material-icons red-text darken-3 m-l-5 m-r-5 hov-pointer">delete_forever</i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Aydin</td>
-                  <td>azakh</td>
-                  <td>azakhaydin@gmail.com</td>
-                  <td>berlin example street</td>
-                  <td>
-                    <i class="material-icons black-text m-l-5 m-r-5 hov-pointer">edit</i>
-                    <i class="material-icons red-text darken-3 m-l-5 m-r-5 hov-pointer">delete_forever</i>
-                  </td>
-                </tr>
+                </template>
               </tbody>
             </table>
           </div>
@@ -232,9 +212,9 @@
         <!-- content section -->
     <script src="/assets/js/axios.js"></script>
     <script defer src="/assets/js/alpine.js"></script>
-    <script src="/assets/js/alpinjscontrollers/mainController.js"></script>
+    <script src="/assets/js/alpinjscontrollers/UserController.js"></script>
     <script src="/assets/materialize/js/materialize.min.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/app.js"></script>
     <script src="/assets/js/user.js"></script>
 </body>
 </html>
