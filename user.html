@@ -60,6 +60,23 @@
                 </div>
                 <div class="col xl2 hide-on-med-and-down"></div>
         </section>
+
+        <template x-if="isLoading">
+    <div class="center-align">
+      <div class="preloader-wrapper small active">
+        <div class="spinner-layer spinner-green-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+        
         <section class="user_list_section" x-init="gitusers()">
           <ul class="collapsible hide-on-med-and-up">
             <template x-for="user in users">
