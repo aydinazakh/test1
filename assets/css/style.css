@@ -43,3 +43,7 @@ table.highlight > tbody > tr:hover {
     box-shadow: 0 0 10px black;
     bottom: 0;
 }
+.user_list_section{
+    height: calc(100vh - 250px);
+    overflow: auto;
+}
