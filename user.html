@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my porject</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/assets/materialize/css/materialize.min.css">
     <link rel="stylesheet" href="/assets/css/util.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <title>my porject</title>
 </head>
 <body x-data="usersData">
       <!-- navbar -->
@@ -77,36 +77,36 @@
     </div>
   </template>
         
-        <section class="user_list_section" x-init="gitusers()">
-          <ul class="collapsible hide-on-med-and-up">
-            <template x-for="user in users">
-              <li class="user_list_item">
-              <div class="collapsible-header">
-                <i class="material-icons blue-text darken-2 user_list_arrow_icon trans-0-2">arrow_drop_down_circle</i>
-                <span x-text="user.name"></span>  
-              </div>
-              <div class="collapsible-body">
-                <div class="p-all-5">
-                  <span class="f-bold">Username :</span>
-                  <span x-text="user.username"></span>
-              </div>
+        <section class="user_list_section" x-init="getUsers()">
+    <ul class="collapsible hide-on-med-and-up">
+      <template x-for="user in users">
+        <li class="users_list_item">
+          <div class="collapsible-header">
+            <i class="material-icons blue-text darken-2 users_list_arrow_icon trans-0-2">arrow_drop_down_circle</i>
+            <span x-text="user.name"></span>
+          </div>
+          <div class="collapsible-body">
             <div class="p-all-5">
-              <span class="f-bold">Email :</span>
-              <span x-text="user.email"></span>
-              </div>
-              <div class="p-all-5">
-                <span class="f-bold">Address :</span>
-                <span x-text="user.address.city+'-'+user.address.street"></span>
-                </div>
-                <div class="p-all-5 flex-l-m">
-              <span class="f-bold">Aciton :</span>
-              <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-              <i class="material-icons black-text m-l-5 m-r-5">edit</i>
-              </div>
+              <span class="f-bold">Username : </span>
+              <span x-text="user.username"></span>
             </div>
-            </li>
-            </template>
-          </ul>
+            <div class="p-all-5">
+              <span class="f-bold">Email : </span>
+              <span x-text="user.email"></span>
+            </div>
+            <div class="p-all-5">
+              <span class="f-bold">Address : </span>
+              <span x-text="user.address.city+'-'+user.address.street"></span>
+            </div>
+            <div class="p-all-5 flex-l-m">
+              <span class="f-bold">Action : </span>
+              <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
+              <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
+            </div>
+          </div>
+        </li>
+      </template>
+    </ul>
           <div class="hide-on-small-and-down show-on-med-and-up  container">
             <table class="striped centered highlight">
               <thead>
