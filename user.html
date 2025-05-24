@@ -150,7 +150,7 @@
               <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
             </div>
           </div>
-          <div class="add_user_modal_back" x-bind:class="{'dis-none' : !showAddModal}" x-on:click="showAddModal = false"></div>
+          <div class="add_user_modal_back" x-show="showAddModal" x-transition.duration.500ms x-on:click="showAddModal = false"></div>
           <div class="add_user_modal container rounded_top_30 trans-0-5" x-bind:class="{'show' : showAddModal}">
             <div class="row p-t-10 p-b-10 p-r-40 p-l-40 center-on-small-only">
               <h5>
